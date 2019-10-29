@@ -18,7 +18,7 @@ var wizardCoat = userDialog.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = userDialog.querySelector('.setup-wizard .wizard-eyes');
 var fireball = userDialog.querySelector('.setup-fireball-wrap');
 
-var onPopupEscPress = function (evt) {
+var onPopupKeyPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
   }
@@ -26,12 +26,12 @@ var onPopupEscPress = function (evt) {
 
 var openPopup = function () {
   userDialog.classList.remove('hidden');
-  document.addEventListener('keydown', onPopupEscPress);
+  document.addEventListener('keydown', onPopupKeyPress);
 };
 
 var closePopup = function () {
   userDialog.classList.add('hidden');
-  document.removeEventListener('keydown', onPopupEscPress);
+  document.removeEventListener('keydown', onPopupKeyPress);
 };
 
 setupOpen.addEventListener('click', function () {
